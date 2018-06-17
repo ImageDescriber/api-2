@@ -43,7 +43,7 @@ class Entity
      *
      * @ORM\Column(name="qwd", type="integer", unique=true)
      */
-    private $qwd;
+    public $qwd;
 
     /**
      * The URL of the artwork's image
@@ -54,7 +54,7 @@ class Entity
      *
      * @ORM\Column(name="image", type="text", nullable=false)
      */
-    private $image;
+    public $image;
 
     /**
      * The Labels of the entity related to the depict
@@ -63,7 +63,7 @@ class Entity
      *
      * @ORM\Column(name="labels", type="array", nullable=true)
      */
-    private $labels;
+    public $labels;
 
     /**
      * Keywords are used to find collections or artwork
@@ -72,7 +72,7 @@ class Entity
      *
      * @ORM\Column(name="keywords", type="array", nullable=true)
      */
-    private $keywords;
+    public $keywords;
 
     /**
      * The status of submission
@@ -81,7 +81,7 @@ class Entity
      *
      * @ORM\Column(name="status", type="string", length=255, nullable=true)
      */
-    private $status;
+    public $status;
 
     /**
      * @var Depict[] Available depicts for this entity.

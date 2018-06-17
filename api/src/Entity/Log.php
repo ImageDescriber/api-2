@@ -50,7 +50,7 @@ class Log
      *
      * @ORM\Column(name="status", type="string")
      */
-    private $status;
+    public $status;
 
     /**
      * @var string
@@ -58,7 +58,7 @@ class Log
      *
      * @ORM\Column(name="ip", type="string", length=255, nullable=true)
      */
-    protected $ip;
+    public $ip;
 
     public function getId(): ?int
     {

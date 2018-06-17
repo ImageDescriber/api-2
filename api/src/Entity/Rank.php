@@ -41,7 +41,7 @@ class Rank
      *
      * @ORM\Column(name="value", type="integer")
      */
-    private $value;
+    public $value;
 
     public function getId(): ?int
     {

@@ -50,7 +50,7 @@ class Depict
      *
      * @ORM\Column(name="qwd", type="integer", unique=true)
      */
-    private $qwd;
+    public $qwd;
 
     /**
      * The Labels of the entity related to the depict
@@ -59,7 +59,7 @@ class Depict
      *
      * @ORM\Column(name="labels", type="array", nullable=true)
      */
-    private $labels;
+    public $labels;
 
     /**
      * The status of submission
@@ -68,7 +68,7 @@ class Depict
      *
      * @ORM\Column(name="status", type="string", length=255)
      */
-    private $status;
+    public $status;
 
 
     public function getId(): ?int
