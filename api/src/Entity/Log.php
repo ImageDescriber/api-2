@@ -12,7 +12,17 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * A Log.
  *
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={"method"="GET", "path"="/logs"},
+ *          "post"={"method"="POST", "path"="/logs"},
+ *     },
+ *     itemOperations={
+ *          "get"={"method"="GET", "path"="/logs/{id}"},
+ *          "patch"={"method"="PATCH", "path"="/logs/{id}"},
+ *          "delete"={"method"="DELETE", "path"="/logs/{id}", "access_control"="is_granted('ROLE_ADMIN')"},
+ *     }
+ * )
  */
 class Log
 {

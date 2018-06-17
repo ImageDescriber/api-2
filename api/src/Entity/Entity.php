@@ -12,7 +12,17 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * A Entity.
  *
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={"method"="GET", "path"="/entities"},
+ *          "post"={"method"="POST", "path"="/entities", "access_control"="is_granted('ROLE_ADMIN')"},
+ *     },
+ *     itemOperations={
+ *          "get"={"method"="GET", "path"="/entities/{id}"},
+ *          "patch"={"method"="PATCH", "path"="/entities/{id}"},
+ *          "delete"={"method"="DELETE", "path"="/entities/{id}", "access_control"="is_granted('ROLE_ADMIN')"},
+ *     }
+ * )
  */
 class Entity
 {

@@ -12,7 +12,17 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * A Rank.
  *
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={"method"="GET", "path"="/ranks"},
+ *          "post"={"method"="POST", "path"="/ranks"},
+ *     },
+ *     itemOperations={
+ *          "get"={"method"="GET", "path"="/ranks/{id}"},
+ *          "patch"={"method"="PATCH", "path"="/ranks/{id}"},
+ *          "delete"={"method"="DELETE", "path"="/ranks/{id}", "access_control"="is_granted('ROLE_ADMIN')"},
+ *     }
+ * )
  */
 class Rank
 {

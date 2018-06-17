@@ -12,7 +12,17 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * A Depict.
  *
  * @ORM\Entity
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={
+ *          "get"={"method"="GET", "path"="/depicts"},
+ *          "post"={"method"="POST", "path"="/depicts"},
+ *     },
+ *     itemOperations={
+ *          "get"={"method"="GET", "path"="/depicts/{id}"},
+ *          "patch"={"method"="PATCH", "path"="/depicts/{id}"},
+ *          "delete"={"method"="DELETE", "path"="/depicts/{id}"},
+ *     }
+ * )
  */
 class Depict
 {
